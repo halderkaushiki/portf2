@@ -218,12 +218,12 @@ body.locked{overflow:hidden}
 /* hero video backdrop */
 .hero{position:relative;isolation:isolate;overflow:hidden;max-width:none;width:100%;margin:0;min-height:100vh;min-height:100svh;padding:120px 28px 90px;align-content:center}
 .hero-in{position:relative;z-index:2;max-width:900px;display:flex;flex-direction:column;align-items:center}
-.hero-tv{position:absolute;z-index:1;top:52%;left:50%;translate:-50% -50%;width:min(58vw,620px);aspect-ratio:16/10;padding:clamp(9px,1.2vw,16px);background:linear-gradient(145deg,#34445f,#111a2b 62%);border:clamp(4px,.7vw,9px) solid #0b1220;border-radius:clamp(12px,2vw,24px);box-shadow:0 14px 0 #0b122088,0 26px 55px #0b122077,0 0 45px #6fb0d833;overflow:visible;pointer-events:none}
-.hero-tv::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,#fff4,#0000 24%,#0003 80%),repeating-linear-gradient(0deg,#0000 0 3px,#ffffff08 3px 4px);z-index:2;pointer-events:none}
-.hero-tv::after{content:"";position:absolute;left:42%;right:42%;bottom:-34px;height:30px;background:linear-gradient(90deg,#101827,#52627a,#101827);clip-path:polygon(35% 0,65% 0,100% 100%,0 100%);filter:drop-shadow(0 5px 3px #0005);z-index:-1}
+.hero-tv{position:absolute;z-index:1;top:52%;left:50%;translate:-50% -50%;width:min(58vw,620px);aspect-ratio:16/10;padding:clamp(9px,1.2vw,16px);background:linear-gradient(145deg,#49362b,#241611 62%);border:clamp(4px,.7vw,9px) solid #150d0a;border-radius:clamp(12px,2vw,24px);box-shadow:0 14px 0 #150d0a88,0 26px 55px #150d0a77,0 0 45px #e8a33d33;overflow:visible;pointer-events:none}
+.hero-tv::before{content:"KAUSHIKI  •  ON AIR";position:absolute;left:clamp(16px,2vw,28px);right:clamp(16px,2vw,28px);top:clamp(10px,1.4vw,18px);height:clamp(22px,3vw,34px);padding:4px 10px;background:linear-gradient(#f0e2c4 0 60%,#e8a33d 60% 82%,#d9483b 82%);color:#2b1f1a;font:700 clamp(9px,1.2vw,14px) var(--pixel);letter-spacing:.08em;text-align:left;z-index:3;pointer-events:none}
+.hero-tv::after{content:"";position:absolute;left:42%;right:42%;bottom:-34px;height:30px;background:linear-gradient(90deg,#2b1f1a,#8a6045,#2b1f1a);clip-path:polygon(35% 0,65% 0,100% 100%,0 100%);filter:drop-shadow(0 5px 3px #0005);z-index:-1}
 .hero-tv-bg,.hero-tv-screen{position:absolute;inset:clamp(10px,1.5vw,20px);width:calc(100% - clamp(20px,3vw,40px));height:calc(100% - clamp(20px,3vw,40px));object-fit:cover;object-position:50% 50%;border-radius:4px}
 .hero-tv-bg{filter:blur(18px) saturate(1.25);transform:scale(1.08);opacity:.9}
-.hero-tv-screen{z-index:1;opacity:.82}
+.hero-tv-screen{z-index:1;opacity:.82;margin-top:clamp(24px,3.8vw,46px);height:calc(100% - clamp(34px,5.3vw,64px));border:clamp(3px,.5vw,6px) solid #2b1f1a;box-shadow:inset 0 0 0 2px #e9ddc044}
 @media(max-width:640px){.hero-tv{width:84vw;top:calc(50% + 24px)}.hero-tv-screen{opacity:.7}}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;z-index:-2;image-rendering:pixelated;background:#9ae1ec;pointer-events:none}
 .hero-shade{position:absolute;inset:0;z-index:-1;pointer-events:none;
@@ -240,7 +240,7 @@ body.locked{overflow:hidden}
 .hero-bg{position:absolute;inset:-42px;width:calc(100% + 84px);height:calc(100% + 84px);object-fit:cover;object-position:50% 62%;filter:blur(14px) saturate(1.1);z-index:-3;pointer-events:none;background:#9ae1ec}
 .hero-video{inset:auto;top:calc(50% + 28px);left:50%;translate:-50% -50%;width:min(100%,100svh,1000px);height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 50%;-webkit-mask-image:linear-gradient(to right,transparent,#000 14%,#000 86%,transparent),linear-gradient(to bottom,transparent,#000 10%,#000 80%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 14%,#000 86%,transparent),linear-gradient(to bottom,transparent,#000 10%,#000 80%,transparent);mask-composite:intersect}
 .hero-video{inset:auto;top:calc(50% + 28px);left:50%;translate:-50% -50%;width:min(100%,100svh,1000px);height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 50%;-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent),linear-gradient(to bottom,transparent,#000 7%,#000 84%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent),linear-gradient(to bottom,transparent,#000 7%,#000 84%,transparent);mask-composite:intersect}
-.intro .stage{top:calc(clamp(18px,4vh,42px) + 108px);right:calc(clamp(18px,4vw,56px) + 280px);bottom:auto;left:auto;align-items:flex-end;z-index:4}
+.intro .stage{top:calc(clamp(18px,4vh,42px) + 108px);right:calc(clamp(18px,4vw,56px) + 240px);bottom:auto;left:auto;align-items:flex-end;z-index:4}
 @media(max-width:640px){.hero-video{width:100%;top:calc(50% + 40px)}}
 .marq{background:var(--ink)}.track span::after{color:var(--gold)}
 @media(max-width:640px){.hero{padding:215px 20px 70px}.hero-video{object-position:50% 70%}}
