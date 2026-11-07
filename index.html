@@ -125,14 +125,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 /* intro */
 body.locked{overflow:hidden}
 .intro{position:fixed;inset:0;z-index:100;background:#120c09;color:#f0d9a8;display:grid;place-items:center;overflow:auto;transition:opacity .9s,transform .9s,visibility .9s}
-.intro::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at center,#0000 42%,#05030255 76%,#050302cc 100%);mix-blend-mode:multiply}
 .intro.leave{opacity:0;transform:scale(1.05);visibility:hidden;pointer-events:none}
 .intro .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;animation:drift 26s ease-in-out infinite alternate}
 @keyframes drift{to{transform:scale(1.09) translate(-1%,1%)}}
 .shade{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,#0000 0,#000a 88%),linear-gradient(#0009,#0000 32%,#000b)}
-.grain{position:absolute;inset:0;z-index:3;opacity:.16;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:grainShift .22s steps(2) infinite}
-@keyframes grainShift{0%{background-position:0 0}25%{background-position:18px -12px}50%{background-position:-10px 16px}75%{background-position:14px 8px}100%{background-position:-6px -18px}}
-@media(prefers-reduced-motion:reduce){.grain{animation:none}}
+.grain{position:absolute;inset:0;opacity:.2;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 .stage{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;padding:5vh 20px;text-align:center;min-height:100%;justify-content:center}
 .tiny{font:400 12px var(--type);letter-spacing:.28em;text-transform:uppercase;color:#e8b84a;margin:0}
 .big{font:700 clamp(46px,11vw,108px)/1 var(--pixel);margin:0;color:#f6e3b4;text-shadow:3px 3px 0 #8a4a1c,6px 6px 0 #2a120a}
