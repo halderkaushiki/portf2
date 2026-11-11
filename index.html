@@ -512,6 +512,7 @@ f.addEventListener('submit',e=>{e.preventDefault();
 // Opening screen: click the cassette (or anywhere / press Enter) to play it and go in
 const intro=$('#intro'),cas=$('#cas'),bar=$('#bar');let busy=false;
 const introVideo=document.createElement('video');introVideo.className='intro-video';introVideo.src='v1.mp4';introVideo.autoplay=true;introVideo.muted=true;introVideo.loop=true;introVideo.playsInline=true;introVideo.preload='auto';introVideo.setAttribute('aria-hidden','true');introVideo.tabIndex=-1;intro.prepend(introVideo);
+const introPhoto=introVideo.cloneNode();introPhoto.className='bg';introPhoto.autoplay=true;introPhoto.muted=true;introPhoto.loop=true;introPhoto.playsInline=true;introPhoto.preload='auto';$('.intro img.bg').replaceWith(introPhoto);
 function click(){try{const c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=140;g.gain.setValueAtTime(.1,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.08);o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.09)}catch(e){}}
 function enter(){if(busy)return;busy=true;click();cas.classList.add('playing');bar.style.width='100%';
   setTimeout(()=>{click();intro.classList.add('leave');intro.inert=true;document.body.classList.remove('locked');window.scrollTo(0,0);
