@@ -147,9 +147,9 @@ body.locked{overflow:hidden}
 @media(max-height:760px){.stage{gap:9px;padding:3vh 16px}}
 .stage{position:absolute;right:calc(22px + 6vw + env(safe-area-inset-right,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));min-height:0;padding:0;gap:10px;align-items:flex-end;justify-content:flex-end}
 .cas,.prog{width:min(170px,42vw)}.cas{transform-origin:100% 100%}
-.intro{background:#2b381f url("loader-background.png") center/cover no-repeat}
+.intro{background:#f5a12f}
 .intro .bg{inset:0;margin:auto;width:min(74vmin,620px);height:min(74vmin,620px);object-position:50% 0%;border:10px solid #e9dcc0;box-shadow:0 24px 60px #000c;animation:none}
-.shade{background:radial-gradient(ellipse at 50% 50%,#0000 55%,#0007 100%)}
+.shade{background:transparent}
 .cas,.prog{width:min(230px,52vw)}
 .intro .bg{translate:-8vw 0}
 .cas,.prog{width:min(240px,50vw)}.prog{display:none}
@@ -510,7 +510,7 @@ f.addEventListener('submit',e=>{e.preventDefault();
   setTimeout(()=>{send.classList.remove('go');f.reset();pv.textContent=pv.dataset.ph;pn.textContent='a visitor'},2400)});
 // Opening screen: click the cassette (or anywhere / press Enter) to play it and go in
 const intro=$('#intro'),cas=$('#cas'),bar=$('#bar');let busy=false;
-const introPhoto=document.createElement('video');introPhoto.className='bg';introPhoto.src='v1.mp4';introPhoto.autoplay=true;introPhoto.muted=true;introPhoto.loop=true;introPhoto.playsInline=true;introPhoto.preload='auto';introPhoto.setAttribute('aria-hidden','true');introPhoto.tabIndex=-1;$('.intro img.bg').replaceWith(introPhoto);
+const introPhoto=document.createElement('img');introPhoto.className='bg';introPhoto.src='loader-artwork.png';introPhoto.alt='';introPhoto.setAttribute('aria-hidden','true');introPhoto.tabIndex=-1;$('.intro img.bg').replaceWith(introPhoto);
 function click(){try{const c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=140;g.gain.setValueAtTime(.1,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.08);o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.09)}catch(e){}}
 function enter(){if(busy)return;busy=true;click();cas.classList.add('playing');bar.style.width='100%';
   setTimeout(()=>{click();intro.classList.add('leave');intro.inert=true;document.body.classList.remove('locked');window.scrollTo(0,0);
